@@ -7,8 +7,8 @@
     "dev": "cd client && npx vite",
     "electron": "electron .",
     "build:client": "cd client && npx vite build",
-    "prebuild": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true});require('fs').cpSync('client/dist','dist',{recursive:true})\"",
-    "build": "npm run build:client && npm run prebuild && electron-builder --win --x64",
+    "copy-dist": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true});require('fs').cpSync('client/dist','dist',{recursive:true})\"",
+    "build": "npm run build:client && npm run copy-dist && electron-builder --win --x64",
     "postinstall": "cd client && npm install"
   },
   "dependencies": {},

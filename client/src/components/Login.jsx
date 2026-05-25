@@ -25,7 +25,7 @@ export default function Login({ onLogin }) {
     <div className="login-container">
       <div className="login-box">
         <div className="login-logo">
-          <img src="/image.png" alt="Logo" className="login-logo-img" />
+          <img src="./image.png" alt="Logo" className="login-logo-img" />
         </div>
         <h2>Cronograma Cómputos</h2>
         <input

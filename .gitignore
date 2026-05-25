@@ -1,0 +1,8 @@
+node_modules/
+client/node_modules/
+client/dist/
+dist/
+release/
+app/
+datos.json
+cronograma.exe

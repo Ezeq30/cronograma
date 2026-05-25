@@ -1,0 +1,43 @@
+{
+  "name": "cronograma",
+  "version": "3.1.0",
+  "description": "Cronograma semanal de empleados - Sector Computos",
+  "main": "electron.js",
+  "scripts": {
+    "dev": "cd client && npx vite",
+    "electron": "electron .",
+    "build:client": "cd client && npx vite build",
+    "prebuild": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true});require('fs').cpSync('client/dist','dist',{recursive:true})\"",
+    "build": "npm run build:client && npm run prebuild && electron-builder --win --x64",
+    "postinstall": "cd client && npm install"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.computos.cronograma",
+    "productName": "Cronograma",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron.js",
+      "preload.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "cronograma.exe"
+    }
+  }
+}
